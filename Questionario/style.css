@@ -1,0 +1,218 @@
+/* Definições de Cores para o Tema Noturno Roxo */
+:root {
+    --bg-dark: #221c38; /* Fundo principal escuro, puxado para o roxo */
+    --form-bg: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente para o container */
+    --primary-color: #bb86fc; /* Roxo claro para destaques (títulos, foco) */
+    --secondary-color: #e0e0e0; /* Cor do texto principal (clara) */
+    --input-bg: rgba(255, 255, 255, 0.05); /* Fundo dos inputs */
+    --input-border: #4d436a; /* Borda sutil dos inputs */
+    --success-color: #6200ee; /* Roxo mais vibrante para o botão principal */
+    --error-color: #cf6679; /* Vermelho suave para erros */
+}
+
+/* 1. ESTILO DO CORPO (Fundo Noturno com Gradiente) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color); /* Texto claro no fundo escuro */
+    line-height: 1.6;
+    padding: 20px;
+    
+    /* Simulação do Céu Noturno Roxo com Gradiente */
+    background: linear-gradient(
+        to bottom,
+        #1e1436 0%,  /* Roxo muito escuro (Topo) */
+        #382455 50%, /* Roxo médio */
+        #6f42c1 100% /* Roxo mais claro (Base, simulando as montanhas) */
+    );
+    min-height: 100vh;
+}
+
+/* 2. ESTILO DO CONTAINER (Caixa Centralizada) */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    
+    /* Estilo semi-transparente/fosco como na imagem de referência */
+    background-color: var(--form-bg); 
+    backdrop-filter: blur(5px); /* Efeito de desfoque sutil (necessário para o look) */
+    
+    padding: 35px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.description {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--input-border);
+    padding-bottom: 15px;
+    font-size: 0.95em;
+}
+
+/* 3. ESTILO DAS SEÇÕES */
+.form-section {
+    border: 1px solid var(--input-border);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo da seção um pouco mais escuro */
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--input-border);
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+/* 4. ESTILO DOS INPUTS E CAMPOS */
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 50px; /* Bordas arredondadas como na imagem */
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--secondary-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none; /* Reset para melhor estilização */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.3); /* Brilho suave */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo do Placeholder (para visibilidade) */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo de Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* Estilo do Input Range */
+input[type="range"] {
+        width: 100%;
+    height: 10px;
+    background: var(--input-border);
+    border-radius: 5px;
+    margin: 15px 0 5px 0;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+/* 5. ESTILO DO BOTÃO DE SUBMISSÃO */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    
+    /* Cor e estilo semelhante ao botão "Login" da imagem */
+    background-color: var(--success-color);
+    color: white;
+    
+    border: none;
+    border-radius: 50px; 
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 40px;
+}
+
+.submit-btn:hover {
+    background-color: #7b43ec; /* Roxo um pouco mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(98, 0, 238, 0.4);
+}
+
+/* 6. ESTILO DAS MENSAGENS DE FEEDBACK */
+#message {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    background-color: rgba(144, 238, 144, 0.2); /* Verde claro transparente */
+    color: #90ee90; /* Verde claro */
+    border: 1px solid #90ee90;
+}
+
+.error {
+    background-color: rgba(207, 102, 121, 0.2); /* Vermelho transparente */
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
